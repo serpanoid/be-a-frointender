@@ -19,7 +19,7 @@
           <p>Hyperdrive Rating: {{ ship.hyperdrive_rating }}</p>
           <p>MGLT: {{ ship.MGLT }}</p>
           <p>Starship Class: {{ ship.starship_class }}</p>
-          <button v-if="ship.pilots.length" @click="showPilots(ship)">View Pilots</button>
+          <button v-if="ship.pilots.length" @click="showPilots(ship)" class="view-pilots-button">View Pilots</button>
         </div>
         <PilotList v-if="activeShip === ship" :pilotUrls="ship.pilots" />
       </div>
@@ -36,7 +36,6 @@ import PilotList from './components/PilotList.vue';
 import axios from 'axios';
 
 export default {
-
   components: {
     PilotList
   },
@@ -83,37 +82,103 @@ export default {
 };
 </script>
 
-
-
 <style>
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
 .starship {
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .starship h2 {
-  margin: 0;
-  font-size: 24px;
+  color: #0077cc;
+  margin-bottom: 10px;
 }
 
 .starship-details p {
-  margin: 5px 0;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-.error {
-  color: red;
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0077cc;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s;
 }
 
-button {
-    margin: 5px;
-    padding: 5px 10px;
-  }
+.button:hover {
+  background-color: #005fa3;
+  cursor: pointer;
+}
+
+.button:disabled {
+  background-color: #cccccc;
+  cursor: default;
+}
 
 .pagination {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
+
+.pagination button {
+  padding: 8px 15px;
+  margin: 5px;
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pagination button:hover {
+  background-color: #0077a3;
+}
+
+.pagination button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}
+
+.view-pilots-button {
+  padding: 8px 15px;
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.view-pilots-button:hover {
+  background-color: #45a049;
+}
+
 </style>

@@ -62,14 +62,30 @@
   </script>
   <style>
   .pilot {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pilot h3 {
+    color: #0077cc;
+    margin-bottom: 10px;
+  }
+  
+  .pilot p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 14px;
   }
   
   .error {
     color: red;
+    margin: 20px 0;
+    text-align: center;
   }
   </style>
+  
   
