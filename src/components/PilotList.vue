@@ -13,7 +13,6 @@
           <p>Eye Color: {{ pilot.eye_color }}</p>
           <p>Birth Year: {{ pilot.birth_year }}</p>
           <p>Gender: {{ pilot.gender }}</p>
-          <!-- Additional pilot details can be added here -->
         </li>
       </ul>
       <div v-else>No pilots available</div>
